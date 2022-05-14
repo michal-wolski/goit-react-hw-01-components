@@ -1,7 +1,9 @@
-import { Profile } from './Profiles/Profile';
 import data from './Statistics/data';
 import user from './Profiles/user';
+import friends from './FriendList/friends';
 import { StaticticsList } from './Statistics/StatisticsList';
+import { Profile } from './Profiles/Profile';
+import { FriendList } from './FriendList/FriendList';
 
 export const App = () => {
   return (
@@ -13,9 +15,10 @@ export const App = () => {
         avatar={user.avatar}
         stats={user.stats}
       />
-      <section>
-        <StaticticsList title="Upload stats" data={data} />
-      </section>
+
+      <StaticticsList title="Upload stats" data={data} />
+
+      <FriendList friends={friends} />
     </>
   );
 };

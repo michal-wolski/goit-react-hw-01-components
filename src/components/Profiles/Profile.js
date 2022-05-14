@@ -29,3 +29,11 @@ export const Profile = ({
     </ul>
   </div>
 );
+
+// Profile.propTypes = {
+//   username: propTypes.string,
+//   tag: propTypes.string,
+//   location: propTypes.string,
+//   avatar: propTypes.img,
+//   stats: propTypes.number,
+// };

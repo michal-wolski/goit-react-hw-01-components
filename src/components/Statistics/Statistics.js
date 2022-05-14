@@ -6,3 +6,8 @@ export const Statistics = ({ label, percentage }) => {
     </li>
   );
 };
+
+// Statistics.propTypes = {
+//   label: label.string,
+//   percentage: percentage.number,
+// };
