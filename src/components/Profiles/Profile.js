@@ -1,3 +1,25 @@
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const ProfileContainer = styled.div`
+  margin-top: 50px;
+`;
+const AvatarImg = styled.img`
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: grey;
+`;
+const Info = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const InfoName = styled.p`
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+`;
+
 export const Profile = ({
   username,
   tag,
@@ -5,13 +27,13 @@ export const Profile = ({
   avatar,
   stats: { followers, views, likes },
 }) => (
-  <div>
-    <div>
-      <img src={avatar} alt="User avatar" />
-      <p>{username}</p>
+  <ProfileContainer>
+    <Info>
+      <AvatarImg src={avatar} alt="User avatar" />
+      <InfoName>{username}</InfoName>
       <p>{tag}</p>
       <p>{location}</p>
-    </div>
+    </Info>
 
     <ul>
       <li>
@@ -27,13 +49,12 @@ export const Profile = ({
         <span>{likes}</span>
       </li>
     </ul>
-  </div>
+  </ProfileContainer>
 );
 
-// Profile.propTypes = {
-//   username: propTypes.string,
-//   tag: propTypes.string,
-//   location: propTypes.string,
-//   avatar: propTypes.img,
-//   stats: propTypes.number,
-// };
+Profile.propTypes = {
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+};
