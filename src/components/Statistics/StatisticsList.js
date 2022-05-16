@@ -1,13 +1,14 @@
 import { Statistics } from './Statistics';
+import { Container, StatList } from './StatisticsStyles';
 
 export const StaticticsList = ({ data, title }) => (
-  <section>
+  <Container>
     <h2>{title}</h2>
-    <ul>
+    <StatList>
       {data.map(data => {
         const { label, percentage, id } = data;
         return <Statistics key={id} label={label} percentage={percentage} />;
       })}
-    </ul>
-  </section>
+    </StatList>
+  </Container>
 );

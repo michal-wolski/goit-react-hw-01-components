@@ -1,24 +1,13 @@
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-const ProfileContainer = styled.div`
-  margin-top: 50px;
-`;
-const AvatarImg = styled.img`
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-color: grey;
-`;
-const Info = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-const InfoName = styled.p`
-  font-size: 30px;
-  font-weight: bold;
-  margin-bottom: 10px;
-`;
+import {
+  ProfileContainer,
+  AvatarImg,
+  Info,
+  InfoName,
+  InfoTagLocation,
+  StatsList,
+  StatsListItem,
+} from './ProfileStyles';
 
 export const Profile = ({
   username,
@@ -31,24 +20,24 @@ export const Profile = ({
     <Info>
       <AvatarImg src={avatar} alt="User avatar" />
       <InfoName>{username}</InfoName>
-      <p>{tag}</p>
-      <p>{location}</p>
+      <InfoTagLocation>{tag}</InfoTagLocation>
+      <InfoTagLocation>{location}</InfoTagLocation>
     </Info>
 
-    <ul>
-      <li>
+    <StatsList>
+      <StatsListItem>
         <span>Followers</span>
         <span>{followers}</span>
-      </li>
-      <li>
+      </StatsListItem>
+      <StatsListItem>
         <span>Views</span>
         <span>{views}</span>
-      </li>
-      <li>
+      </StatsListItem>
+      <StatsListItem>
         <span>Likes</span>
         <span>{likes}</span>
-      </li>
-    </ul>
+      </StatsListItem>
+    </StatsList>
   </ProfileContainer>
 );
 
