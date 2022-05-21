@@ -24,6 +24,6 @@ export const Avatar = styled.img`
 export const Status = styled.span`
   width: 20px;
   height: 20px;
-  background-color: ${({ isOnline }) => (isOnline ? 'black' : 'green')};
+  background-color: ${({ isOnline }) => (isOnline ? 'green' : 'red')};
   border-radius: 50%;
 `;
